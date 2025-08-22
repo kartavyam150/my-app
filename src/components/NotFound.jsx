@@ -5,13 +5,9 @@ const NotFound = () => {
   return (
     <div className="notfound-container">
       <div className="notfound-content">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-          alt="React Logo"
-          className="notfound-logo animate-logo"
-        />
         <h1 className="notfound-title">404</h1>
-        <p className="notfound-message">Sorry, this page is not available.</p>
+        <p className="notfound-message">Oops! The page you're looking for doesn't exist.</p>
+        <a href="/" className="notfound-button">Go to Homepage</a>
       </div>
     </div>
   );
