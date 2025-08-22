@@ -1,0 +1,78 @@
+.new-tab-container {
+  min-height: 100vh;
+  background: linear-gradient(to top right, #f0f4f8, #e1e8f0);
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.new-tab-content {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.greeting {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #777;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px 12px 40px;
+  border-radius: 25px;
+  border: none;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  outline: none;
+}
+
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 20px;
+}
+
+.shortcut-card {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  padding: 20px 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.shortcut-card:hover {
+  transform: scale(1.05);
+}
+
+.shortcut-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.shortcut-label {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}

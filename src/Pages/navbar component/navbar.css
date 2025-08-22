@@ -1,0 +1,23 @@
+.navbar {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #333;
+  }
+  
+  button {
+    background: transparent;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    color: gold;
+  }
+  
+  .active {
+    border-bottom: 2px solid gold;
+  }
+  

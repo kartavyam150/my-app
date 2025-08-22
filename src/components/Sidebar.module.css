@@ -1,0 +1,24 @@
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background: #222;
+  color: #fff;
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin-top: 72px; /* Add this line for space below the toggle button */
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.sidebar li {
+  text-align: left;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px; /* Smaller font size */
+}

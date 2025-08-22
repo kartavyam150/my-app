@@ -1,0 +1,38 @@
+.progressContainer {
+    width: 300px;
+    background: #1f1f1f;
+    padding: 1rem;
+    border-radius: 12px;
+    color: #fff;
+    box-shadow: 0 0 10px #333;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .xpBar {
+    background: #444;
+    border-radius: 10px;
+    height: 20px;
+    margin: 10px 0;
+    overflow: hidden;
+  }
+  
+  .xpFill {
+    background: linear-gradient(to right, #4caf50, #81c784);
+    height: 100%;
+    transition: width 0.5s ease;
+  }
+  
+  .badges {
+    margin-top: 1rem;
+  }
+  
+  .badge {
+    background: gold;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin: 5px 5px 0 0;
+    font-weight: bold;
+    display: inline-block;
+  }
+  

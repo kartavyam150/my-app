@@ -1,0 +1,145 @@
+/* Container for curtains */
+.curtain-wrapper {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: black;  /* Added black background */
+  }
+  
+  /* Curtain styles */
+  .curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+    transition: transform 2s ease-in-out;
+    background: repeating-linear-gradient(
+      90deg,
+      #8b0000,
+      #8b0000 10px,
+      #a80000 10px,
+      #a80000 20px
+    );
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.6); /* Retained the shadow effect for depth */
+  }
+  
+  /* Left curtain */
+  .left {
+    left: 0;
+    transform-origin: left center;
+    z-index: 2;
+  }
+  
+  /* Right curtain */
+  .right {
+    right: 0;
+    transform-origin: right center;
+    z-index: 2;
+  }
+  
+  /* Animation for curtain opening (updated) */
+  .curtain.open {
+    transform: translateX(-100%); /* Moves the left curtain out */
+  }
+  
+  .right.open {
+    transform: translateX(100%); /* Moves the right curtain out to the right */
+  }
+  
+  /* Button styles */
+  .launch-btn-wrapper {
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+  
+  .launch-btn-wrapper button {
+    background-color: gold;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Fade out button when curtains open */
+  .fade-out {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease-out;
+  }
+  
+  /* Revealed content */
+  .revealed-content {
+    opacity: 0;
+    transition: opacity 2s ease-in;
+    z-index: 1;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .revealed-content.show {
+    opacity: 1;
+  }
+  
+  /* Gold trim for curtains */
+  .curtain {
+    border-left: 6px solid gold;
+    border-right: 6px solid gold;
+  }
+  
+  /* Curtain tiebacks */
+  .tieback {
+    position: absolute;
+    width: 10px;
+    height: 80px;
+    background: gold;
+    border-radius: 20px;
+    z-index: 3;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+  }
+  
+  .left-tie {
+    left: 45%;
+  }
+  
+  .right-tie {
+    right: 45%;
+  }
+  
+  /* Curtain ropes at the top corners */
+  .curtain-rope {
+    position: absolute;
+    width: 60px;
+    height: 6px;
+    background: linear-gradient(to right, gold, #daa520, gold);
+    z-index: 4;
+    top: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.6);
+  }
+  
+  .left-rope {
+    left: 0;
+    transform: rotate(30deg);
+    transform-origin: top left;
+  }
+  
+  .right-rope {
+    right: 0;
+    transform: rotate(-30deg);
+    transform-origin: top right;
+  }
+  

@@ -1,0 +1,163 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+body {
+  overflow: hidden;
+}
+
+.balloon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at center, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0.5));
+  border-radius: 50%;
+  opacity: 1;
+  animation: throwBalloon 0.8s ease-out forwards;
+}
+.balloon::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid rgba(255, 0, 0, 0.8);
+  transform: translateX(-50%);
+}
+@keyframes throwBalloon {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) translateY(-50px);
+  }
+  100% {
+    transform: scale(0) translateY(-100px);
+    opacity: 0;
+  }
+}
+.sprinkle {
+  position: absolute;
+  background: rgba(255, 0, 0, 0.8);
+  border-radius: 50%;
+  opacity: 1;
+}
+.centerSplash {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 182, 193, 0.6);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.clearButton {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: grey;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 1000;
+  pointer-events: auto;
+  color: #000080;
+}
+.waterSplash {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #00bfff88 60%, transparent 100%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  opacity: 0.8;
+  pointer-events: none;
+  animation: waterSplashAnim 0.8s ease-out forwards;
+  z-index: 2000;
+}
+
+@keyframes waterSplashAnim {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0.8;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+.waveOverlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 3000;
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 200vw;
+  height: 60vh; /* Increased from 30vh */
+  background: rgba(0,191,255,0.3); /* was 0.7, now more transparent */
+  border-radius: 43% 57% 60% 40% / 60% 40% 60% 40%;
+  animation: seaWave 2s ease-in-out forwards;
+  opacity: 0.9;
+}
+
+.wave:nth-child(2) {
+  background: rgba(0,191,255,0.18); /* was 0.5, now more transparent */
+  height: 70vh; /* Increased from 35vh */
+  animation-duration: 2.2s;
+}
+
+.wave:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.wave:nth-child(4) {
+  background: rgba(0,191,255,0.09); /* was 0.3, now more transparent */
+  height: 80vh;
+  animation-delay: 1s;
+}
+
+@keyframes seaWave {
+  0% {
+    transform: translateX(-100vw) scaleY(0.5);
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(0vw) scaleY(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0vw) scaleY(1);
+    opacity: 0;
+  }
+}
+.topRight {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 2001;
+}

@@ -1,0 +1,89 @@
+.appWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #0f172a; /* Dark background for the whole app */
+  color: #e2e8f0; /* Light text color */
+}
+
+.mainLayout {
+  display: flex;
+  flex: 1; /* Allows main content area to grow */
+}
+
+.toggleButton {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); /* Gradient button */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  transform: rotate(0deg);
+}
+
+.toggleButton:hover,
+.toggleButton:focus {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  outline: none;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 0; /* Removed padding to eliminate blank space on the sides of components */
+  margin-left: 0; /* Default: no sidebar */
+  transition: margin-left 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 100%; /* Ensure content takes full height of its parent */
+}
+
+.content.withSidebar {
+  margin-left: 288px; /* Sidebar width + padding */
+  width: calc(100% - 288px);
+}
+
+.footer {
+  /* position: fixed; */ /* Changed to relative positioning */
+  /* right: 20px; */
+  /* bottom: 20px; */
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 15px;
+  background-color: rgba(30, 41, 59, 0.8); /* Semi-transparent dark background */
+  color: #94a3b8; /* Muted text color */
+  z-index: 3000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease-in-out;
+  margin-top: auto; /* Pushes footer to the bottom of the appWrapper */
+  align-self: flex-end; /* Aligns footer to the right within appWrapper */
+  margin-right: 0; /* Removed right margin to eliminate blank space */
+  margin-bottom: 0; /* Removed bottom margin to eliminate blank space */
+}
+
+.footer:hover {
+  background-color: rgba(51, 65, 85, 0.9);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}

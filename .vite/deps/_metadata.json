@@ -1,0 +1,115 @@
+{
+  "hash": "28be0b45",
+  "configHash": "92ca3704",
+  "lockfileHash": "52d9c106",
+  "browserHash": "5f3222df",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "bc695273",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "0bb49651",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "0f06b17e",
+      "needsInterop": false
+    },
+    "lucide-react": {
+      "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "59001adc",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "77e94216",
+      "needsInterop": false
+    },
+    "@emailjs/browser": {
+      "src": "../../node_modules/@emailjs/browser/es/index.js",
+      "file": "@emailjs_browser.js",
+      "fileHash": "5347fc7a",
+      "needsInterop": false
+    },
+    "tesseract.js": {
+      "src": "../../node_modules/tesseract.js/src/index.js",
+      "file": "tesseract__js.js",
+      "fileHash": "af10e738",
+      "needsInterop": true
+    },
+    "canvas-confetti": {
+      "src": "../../node_modules/canvas-confetti/dist/confetti.module.mjs",
+      "file": "canvas-confetti.js",
+      "fileHash": "a8a7d3ea",
+      "needsInterop": false
+    },
+    "react-qr-code": {
+      "src": "../../node_modules/react-qr-code/lib/index.js",
+      "file": "react-qr-code.js",
+      "fileHash": "bc2b2874",
+      "needsInterop": true
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/react-icons/fa/index.mjs",
+      "file": "react-icons_fa.js",
+      "fileHash": "9c57424e",
+      "needsInterop": false
+    },
+    "@react-three/fiber": {
+      "src": "../../node_modules/@react-three/fiber/dist/react-three-fiber.esm.js",
+      "file": "@react-three_fiber.js",
+      "fileHash": "077e6e30",
+      "needsInterop": false
+    },
+    "@react-three/drei": {
+      "src": "../../node_modules/@react-three/drei/index.js",
+      "file": "@react-three_drei.js",
+      "fileHash": "33f3a076",
+      "needsInterop": false
+    },
+    "react-icons/si": {
+      "src": "../../node_modules/react-icons/si/index.mjs",
+      "file": "react-icons_si.js",
+      "fileHash": "b001f89d",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "hls-26GQOYKQ": {
+      "file": "hls-26GQOYKQ.js"
+    },
+    "vision_bundle-YUWLS7YX": {
+      "file": "vision_bundle-YUWLS7YX.js"
+    },
+    "chunk-MQL6QFDH": {
+      "file": "chunk-MQL6QFDH.js"
+    },
+    "chunk-2ID5OH63": {
+      "file": "chunk-2ID5OH63.js"
+    },
+    "chunk-6GSVJYH6": {
+      "file": "chunk-6GSVJYH6.js"
+    },
+    "chunk-DHINFPD6": {
+      "file": "chunk-DHINFPD6.js"
+    },
+    "chunk-XIOCMF7I": {
+      "file": "chunk-XIOCMF7I.js"
+    },
+    "chunk-ZCTWYGUT": {
+      "file": "chunk-ZCTWYGUT.js"
+    },
+    "chunk-PR4QN5HX": {
+      "file": "chunk-PR4QN5HX.js"
+    }
+  }
+}

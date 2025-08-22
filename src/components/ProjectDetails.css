@@ -1,0 +1,79 @@
+.project-details-container {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-details-container h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+}
+
+.project-section {
+  margin-bottom: 30px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.project-section h2 {
+  color: #34495e;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.project-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding-left: 0;
+}
+
+.project-section ul li {
+  margin-bottom: 10px;
+}
+
+.project-section p {
+  margin-bottom: 10px;
+}
+
+.project-section pre {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.project-section code {
+  font-family: 'Courier New', Courier, monospace;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.project-section pre code {
+  color: #333;
+  background-color: transparent;
+  padding: 0;
+}
+
+.project-section a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.project-section a:hover {
+  text-decoration: underline;
+}
