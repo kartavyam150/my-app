@@ -33,6 +33,7 @@ const components = [
 	{ name: "Solar System Explorer", desc: "Explore planets and facts about the solar system.", path: "/solar" }, // NEW
 	{ name: "Dictionary", desc: "Get English and Hindi meanings for words.", path: "/dictionary" }, // NEW
 	{ name: "AI Assistant (Gemini)", desc: "Chat with Gemini AI using your own backend.", path: "/geminibhAI" }, // NEW
+	{ name: "Finance Tracker", desc: "Track income, expenses, and manage financial goals.", path: "/finance-tracker" }, // NEW
 ];
 
 const About = () => {

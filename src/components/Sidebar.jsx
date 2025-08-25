@@ -29,7 +29,8 @@ import {
   FaFeatherAlt,
   FaBookOpen,
   FaFont,
-  FaTicketAlt
+  FaTicketAlt,
+  FaDollarSign // For Finance Tracker
 } from "react-icons/fa";
 
 const navItems = [
@@ -71,7 +72,8 @@ const navItems = [
   { label: "geminibhAI", path: "/geminibhAI", icon: <FaBrain /> },
   { label: "Fifteen Puzzle", path: "/fifteenpuzzle", icon: <FaPuzzlePiece /> },
   { label: "Metro Ticket Generator", path: "/metroticket", icon: <FaTicketAlt /> },
-  { label: "Project Details", path: "/projectdetails", icon: <FaInfoCircle /> }
+  { label: "Project Details", path: "/projectdetails", icon: <FaInfoCircle /> },
+  { label: "Finance Tracker", path: "/finance-tracker", icon: <FaDollarSign /> }
 ];
 
 const Sidebar = ({ showSidebar }) => {

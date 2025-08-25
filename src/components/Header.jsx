@@ -24,7 +24,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-blue-600 text-white p-4 flex items-center justify-between">
+    <header className="bg-blue-600 text-[#333] p-4 flex items-center justify-between">
       <div className="flex items-center">
         {/* Replace the placeholder image with your logo */}
         <img
@@ -49,24 +49,24 @@ const Header = () => {
         <ul className="flex space-x-4">
           <li className="cursor-pointer">
             <Link to="/">
-              <FaHome className="text-white" />
+              <FaHome className="text-[#333]" />
             </Link>
           </li>
           <li className="cursor-pointer">
-            <Link to="/login" className="flex items-center space-x-1 text-white">
-              <FaUserAlt className="text-white" />
+            <Link to="/login" className="flex items-center space-x-1 text-[#333]">
+              <FaUserAlt className="text-[#333]" />
               <span>Login</span>
             </Link>
           </li>
           <li className="cursor-pointer">
-            <Link to="/signup" className="flex items-center space-x-1 text-white">
-              <FaUserPlus className="text-white" />
+            <Link to="/signup" className="flex items-center space-x-1 text-[#333]">
+              <FaUserPlus className="text-[#333]" />
               <span>Signup</span>
             </Link>
           </li>
           <li className="relative cursor-pointer">
             <Link to="/cart">
-              <FaShoppingCart className="text-white text-2xl" />
+              <FaShoppingCart className="text-[#333] text-2xl" />
               {cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-red-500 rounded-full text-xs w-4 h-4 flex items-center justify-center">
                   {cartCount}
