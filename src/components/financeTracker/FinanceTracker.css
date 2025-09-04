@@ -1,0 +1,395 @@
+.finance-tracker-page {
+  padding: 20px;
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+  color: #333;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f2f5; /* Light grey background for the page */
+}
+
+.finance-tracker-page h1 {
+  color: #2c3e50; /* Darker heading color */
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+.finance-tracker-page h2,
+.finance-tracker-page h3 {
+  color: #34495e; /* Slightly lighter heading color */
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  font-weight: 500;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.finance-tracker-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #ffffff; /* White background for the main content area */
+  padding: 20px;
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
+  overflow-y: auto;
+}
+
+.finance-tracker-dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .finance-tracker-dashboard {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "form charts"
+      "goals goals";
+  }
+
+  .transaction-form-container { grid-area: form; }
+  .goal-tracker-container { grid-area: goals; }
+  .summary-charts-container { grid-area: charts; }
+}
+
+@media (min-width: 1024px) {
+  .finance-tracker-dashboard {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "form charts goals";
+  }
+}
+
+/* General Card Styling */
+.finance-summary-container,
+.transaction-form-container,
+.summary-charts-container,
+.goal-tracker-container,
+.transaction-table-container {
+  background-color: #ffffff; /* White background for all cards */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for cards */
+}
+
+/* Summary Component Styling */
+.finance-summary-container {
+  margin-bottom: 20px;
+}
+
+.summary-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px; /* Increased gap */
+  margin-top: 15px;
+}
+
+.summary-card {
+  flex: 1;
+  min-width: 220px; /* Slightly wider cards */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out; /* Add hover effect */
+}
+
+.summary-card:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+}
+
+.summary-card h3 {
+  margin-top: 0;
+  color: white;
+  font-size: 1.3em;
+  border-bottom: none; /* Remove border for card titles */
+}
+
+.summary-card p {
+  font-size: 2em; /* Larger amount font */
+  font-weight: 700;
+  margin: 5px 0 0;
+}
+
+.summary-card.income {
+  background-image: linear-gradient(to right, #2ecc71, #27ae60); /* Gradient green */
+}
+
+.summary-card.expenses {
+  background-image: linear-gradient(to right, #e74c3c, #c0392b); /* Gradient red */
+}
+
+.summary-card.savings {
+  background-image: linear-gradient(to right, #3498db, #2980b9); /* Gradient blue */
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 18px; /* Slightly more spacing */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px; /* More spacing */
+  font-weight: 600; /* Bolder label */
+  color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+  width: calc(100% - 24px); /* Adjust for padding */
+  padding: 12px; /* More padding */
+  border: 1px solid #ccc; /* Lighter border */
+  border-radius: 6px; /* More rounded */
+  font-size: 15px;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px; /* Taller textarea */
+}
+
+button {
+  background-color: #3498db; /* Default button blue */
+  color: white;
+  padding: 12px 20px; /* More padding */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px); /* Lift button on hover */
+}
+
+.add-transaction-button,
+.add-goal-button {
+  background-image: linear-gradient(to right, #2ecc71, #27ae60); /* Green gradient for add buttons */
+}
+
+.add-transaction-button:hover,
+.add-goal-button:hover {
+  background-color: #218838;
+}
+
+.quick-add-button {
+  background-color: #95a5a6; /* Grey for quick add */
+  margin-top: 10px;
+}
+
+.quick-add-button:hover {
+  background-color: #7f8c8d;
+}
+
+.edit-button {
+  background-color: #f39c12; /* Orange for edit */
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #e67e22;
+}
+
+.delete-button,
+.cancel-edit-button {
+  background-color: #e74c3c; /* Red for delete/cancel */
+  color: white;
+}
+
+.delete-button:hover,
+.cancel-edit-button:hover {
+  background-color: #c0392b;
+}
+
+
+/* Table Styling */
+.transaction-table-container {
+  overflow-x: auto;
+  margin-top: 20px; /* Space from dashboard */
+  max-height: 60vh; /* Allow table to take more height */
+  overflow-y: auto;
+}
+
+.transaction-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.transaction-table-container th,
+.transaction-table-container td {
+  padding: 14px 18px; /* More padding */
+  border-bottom: 1px solid #eee; /* Lighter border */
+  text-align: left;
+}
+
+.transaction-table-container th {
+  background-color: #ecf0f1; /* Light grey header */
+  cursor: pointer;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.transaction-table-container th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.transaction-table-container th:last-child {
+  border-top-right-radius: 10px;
+}
+
+
+.transaction-table-container tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Subtle stripe */
+}
+
+.transaction-table-container tbody tr:hover {
+  background-color: #f5f5f5; /* Lighter hover */
+}
+
+.text-danger {
+  color: #e74c3c; /* Consistent red */
+  font-weight: 600;
+}
+
+.text-success {
+  color: #2ecc71; /* Consistent green */
+  font-weight: 600;
+}
+
+.transaction-table-container .filters {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap; /* Allow filters to wrap */
+}
+
+.transaction-table-container .filters label {
+  font-weight: 600;
+  color: #555;
+}
+
+.transaction-table-container .filters select,
+.transaction-table-container .filters input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+/* Charts Styling */
+.summary-charts-container {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-wrapper {
+  margin-bottom: 15px;
+  max-width: 100%; /* Allow charts to fill container */
+  width: 100%; /* Important for responsiveness */
+  height: 250px; /* Fixed height for charts */
+}
+
+.charts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%; /* Ensure grid takes full width */
+}
+
+@media (min-width: 768px) {
+  .charts-grid {
+    justify-content: space-around;
+  }
+}
+
+/* Goal Tracker Styling */
+.goals-list ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.goals-list li {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 18px; /* More padding */
+  margin-bottom: 12px; /* More spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04); /* Subtle shadow */
+}
+
+.goals-list li h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #3498db; /* Blue for goal names */
+  font-size: 1.2em;
+  border-bottom: none;
+}
+
+.goals-list li p {
+  margin-bottom: 6px;
+  font-size: 0.95em;
+  color: #666;
+}
+
+.goals-list .goal-actions button {
+  padding: 8px 15px; /* Adjust button padding */
+  font-size: 13px;
+  margin-left: 8px;
+}
+
+.progress-bar-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  height: 12px; /* Slightly taller progress bar */
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-image: linear-gradient(to right, #2ecc71, #27ae60); /* Green gradient for progress */
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  font-size: 0.7em;
+  line-height: 12px;
+  transition: width 0.5s ease-in-out;
+  font-weight: 600;
+}

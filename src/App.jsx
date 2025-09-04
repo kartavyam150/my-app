@@ -48,6 +48,8 @@ import ChatComponent from './components/geminibhAI';
 import FifteenPuzzle from './components/FifteenPuzzle';
 import MetroTicketGenerator from './components/MetroTicketGenerator';
 import ProjectDetails from './components/ProjectDetails';
+import FinanceTrackerPage from './components/financeTracker/FinanceTrackerPage';
+import TransactionHistoryPage from './components/financeTracker/TransactionHistoryPage';
 
 function App() {
   const [showSidebar, setShowSidebar] = useState(true);
@@ -107,6 +109,8 @@ function App() {
             <Route path="/fifteenpuzzle" element={<FifteenPuzzle />} />
             <Route path="/metroticket" element={<MetroTicketGenerator />} />
             <Route path="/projectdetails" element={<ProjectDetails />} />
+            <Route path="/finance-tracker" element={<FinanceTrackerPage />} />
+            <Route path="/finance-tracker/history" element={<TransactionHistoryPage />} />
           </Routes>
         </div>
       </div>

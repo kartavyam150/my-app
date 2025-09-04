@@ -71,8 +71,8 @@ const NumberToIndianWords = () => {
         type="text"
         value={number}
         onChange={handleChange}
-        placeholder="Enter a number (e.g., 1234567)" 
-        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        placeholder="Enter a number (e.g., 1234567)"
+        className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 placeholder-gray-500"
       />
       <div className="text-gray-700 text-lg">
         {number && <p><strong>In Words:</strong> {words}</p>}
