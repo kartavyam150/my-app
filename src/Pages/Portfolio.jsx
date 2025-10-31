@@ -37,7 +37,9 @@ const projects = [
   // { title: "Random Letter Splash", desc: "Throw random letters with splash effects.", link: "/randomletter" }, // NEW
   { title: "Vocab Match Game", desc: "Match vocabulary words with their meanings.", link: "/vocabmatch" }, // NEW
   { title: "Memory Match Game", desc: "Classic memory card matching game.", link: "/memoryMatch" }, // NEW
-  
+  { title: "Finance Tracker", desc: "Track income, expenses, and manage financial goals.", link: "/finance-tracker" }, // NEW
+  { title: "Typing Tutor", desc: "Improve typing speed and accuracy with live tracking.", link: "/typing-tutor" }, // NEW
+  { title: "Speed Test", desc: "Test your internet speed (ping, download, upload).", link: "/speed-test" }, // NEW
   // { title: "Progress Tracker Page", desc: "Track your progress visually.", link: "/progresstrack" }, // NEW
 ];
 

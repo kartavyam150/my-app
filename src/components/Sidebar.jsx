@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useTheme } from "../contexts/ThemeContext"; // Import useTheme hook
 import {
   FaHome,
   FaInfoCircle,
@@ -29,7 +30,11 @@ import {
   FaFeatherAlt,
   FaBookOpen,
   FaFont,
-  FaTicketAlt
+  FaTicketAlt,
+  FaDollarSign, // For Finance Tracker
+  FaWifi, // For Speed Test
+  FaSun, // For light theme icon
+  FaMoon // For dark theme icon
 } from "react-icons/fa";
 
 const navItems = [
@@ -71,11 +76,20 @@ const navItems = [
   { label: "geminibhAI", path: "/geminibhAI", icon: <FaBrain /> },
   { label: "Fifteen Puzzle", path: "/fifteenpuzzle", icon: <FaPuzzlePiece /> },
   { label: "Metro Ticket Generator", path: "/metroticket", icon: <FaTicketAlt /> },
-  { label: "Project Details", path: "/projectdetails", icon: <FaInfoCircle /> }
+  { label: "Project Details", path: "/projectdetails", icon: <FaInfoCircle /> },
+  { label: "Finance Tracker", path: "/finance-tracker", icon: <FaDollarSign /> },
+  { label: "Typing Tutor", path: "/typing-tutor", icon: <FaCode /> },
+  { label: "Speed Test", path: "/speed-test", icon: <FaWifi /> },
+  { label: "Shlokas", path: "/shloka", icon: <FaBookOpen /> },
 ];
 
 const Sidebar = ({ showSidebar }) => {
   const navigate = useNavigate();
+  const { theme, updateTheme } = useTheme(); // Use the theme hook
+
+  const toggleTheme = () => {
+    updateTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
   return (
     <aside className={`h-screen w-72 bg-gray-900 flex flex-col px-6 py-8 shadow-2xl border-r border-gray-800 fixed top-0 left-0 z-40 overflow-y-auto hide-scrollbar transform transition-transform duration-300 ease-in-out ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}>
@@ -96,6 +110,19 @@ const Sidebar = ({ showSidebar }) => {
           Quick Access
         </span>
       </div>
+      {/* Theme Toggle Button */}
+      <button
+        onClick={toggleTheme}
+        className="flex items-center justify-center gap-4 px-5 py-3 rounded-xl cursor-pointer text-gray-300 hover:bg-gray-800 hover:text-blue-400 transition-all duration-200 font-medium text-base group relative overflow-hidden mb-4"
+      >
+        <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-0 transition-opacity duration-200 group-hover:opacity-20"></span>
+        <span className="text-2xl text-blue-400 group-hover:text-purple-400 transition-colors duration-200 relative z-10">
+          {theme === 'light' ? <FaMoon /> : <FaSun />}
+        </span>
+        <span className="relative z-10">
+          {theme === 'light' ? 'Dark Theme' : 'Light Theme'}
+        </span>
+      </button>
       {/* Navigation Items */}
       <ul className="flex flex-col gap-2 flex-grow">
         {navItems.map((item) => (
