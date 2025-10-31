@@ -6,7 +6,7 @@ import styles from './App.module.css';
 import HelloWorld from "./components/Helloworld";
 import Counter from "./components/counter";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./Pages/Home";
 import About from "./Pages/About";
 import UserList from './components/user/UserList';
 import UserTable from './components/user/userTable';
