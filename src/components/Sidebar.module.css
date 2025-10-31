@@ -1,19 +1,60 @@
 .sidebar {
   width: 200px;
   height: 100vh;
-  background: #222;
-  color: #fff;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
   padding: 20px 0;
   position: fixed;
   left: 0;
   top: 0;
   margin-top: 72px; /* Add this line for space below the toggle button */
+  display: flex; /* Ensure flex container */
+  flex-direction: column; /* Ensure column direction */
+  /* overflow-y: auto; is likely set by Tailwind in Sidebar.jsx, we will let it manage the overall scroll */
 }
+
+/* Style for the logo (first div child of .sidebar) to make it sticky */
+.sidebar > div:nth-child(1) {
+  position: sticky;
+  top: 0;
+  background-color: inherit; /* Inherit background from parent to hide scrolling content */
+  z-index: 10; /* Ensure it stays above scrolling content */
+  width: 100%; /* Ensure it spans the full width of the sidebar */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  padding-bottom: 20px; /* Add some space below the logo */
+}
+
+/* Style for the "Quick Access" section (second div child of .sidebar) to make it sticky */
+.sidebar > div:nth-child(2) {
+  position: sticky;
+  top: 104px; /* Approximate: Logo height (64px) + mb-10 (40px) */
+  background-color: inherit;
+  z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 20px; /* Add some space below */
+}
+
+/* Style for the theme toggle button (third button child of .sidebar) to make it sticky */
+.sidebar > button:nth-child(3) {
+  position: sticky;
+  top: 168px; /* Approximate: Logo (104px) + Quick Access (64px) */
+  background-color: inherit;
+  z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 20px; /* Add some space below */
+}
+
+/* Style for the navigation items (ul) to ensure they scroll independently */
 .sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
   text-align: left;
+  flex-grow: 1; /* Allows it to take up remaining space in the flex container */
+  overflow-y: auto; /* Enable vertical scrolling for this section */
+  padding-right: 15px; /* To prevent content from being hidden by scrollbar */
 }
 
 .sidebar li {

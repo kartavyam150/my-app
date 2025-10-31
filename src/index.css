@@ -79,8 +79,8 @@ button:focus-visible {
   font-weight: 400;
 
   color-scheme: light;
-  color: #213547;
-  background-color: #f5f5f5;
+  color: var(--text-color);
+  background-color: var(--background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -101,7 +101,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   /* font-family: Helvetica, Arial, sans-serif; */
   font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
@@ -144,18 +144,6 @@ input[type="submit"]:disabled {
   opacity: 0.7;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
 
 html,
 body,
@@ -171,4 +159,61 @@ body,
 .hide-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+/* Theme variables */
+:root {
+  /* Light theme variables */
+  --background-color: #f0f0f0;
+  --text-color: #333;
+  --sidebar-bg: #fff;
+  --sidebar-text: #333;
+  --sidebar-link-hover: #f0f0f0;
+}
+
+body.theme-dark {
+  /* Dark theme variables */
+  --background-color: #333;
+  --text-color: #f0f0f0;
+  --sidebar-bg: #222;
+  --sidebar-text: #f0f0f0;
+  --sidebar-link-hover: #444;
+}
+
+.theme-orange {
+  --primary-color: #FF9800; /* Orange */
+  --secondary-color: #FFB74D; /* Light Orange */
+  --background-color: #FFF3E0;
+  --text-color: #E65100;
+}
+
+.theme-purple {
+  --primary-color: #9C27B0; /* Purple */
+  --secondary-color: #CE93D8; /* Light Purple */
+  --background-color: #F3E5F5;
+  --text-color: #4A148C;
+}
+
+.theme-green {
+  --primary-color: #009688; /* Teal */
+  --secondary-color: #4DB6AC; /* Light Teal */
+  --background-color: #E0F2F1;
+  --text-color: #004D40;
+}
+
+/* Default theme application */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }

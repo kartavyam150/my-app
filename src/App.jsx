@@ -6,6 +6,7 @@ import styles from './App.module.css';
 import HelloWorld from "./components/Helloworld";
 import Counter from "./components/counter";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { ThemeProvider } from './contexts/ThemeContext';
 import Home from "./pages/Home";
 import About from "./Pages/About";
 import UserList from './components/user/UserList';
@@ -48,83 +49,96 @@ import ChatComponent from './components/geminibhAI';
 import FifteenPuzzle from './components/FifteenPuzzle';
 import MetroTicketGenerator from './components/MetroTicketGenerator';
 import ProjectDetails from './components/ProjectDetails';
+import FinanceTrackerPage from './components/financeTracker/FinanceTrackerPage';
+import TransactionHistoryPage from './components/financeTracker/TransactionHistoryPage';
+import TypingTutor from './components/TypingTutor';
+import SpeedTest from './components/SpeedTest';
+import ShlokaForm from './components/ShlokaForm';
+
 
 function App() {
   const [showSidebar, setShowSidebar] = useState(true);
   const navigate = useNavigate();
 
   return (
-    <div className={styles.appWrapper}>
-      <div className={styles.mainLayout}>
-        <button
-          onClick={() => setShowSidebar(!showSidebar)}
-          className={styles.toggleButton}
-          aria-label="Toggle Sidebar"
-        >
-          {showSidebar ? "✖" : "☰"}
-        </button>
-        <Sidebar showSidebar={showSidebar} />
-        <div className={`${styles.content} ${showSidebar ? styles.withSidebar : ''}`}>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/hello" element={<HelloWorld />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/userlist" element={<UserList />} />
-            <Route path="/usertable" element={<UserTable />} />
-            <Route path="/counter" element={<Counter />} />
-            <Route path="/hooks" element={<Hooks />} />
-            <Route path="/curtains" element={<CurtainShow />} />
-            <Route path="/numtowords" element={<NumberToIndianWords />} />
-            <Route path="/audiotowords" element={<AudioToWords />} />
-            <Route path="/progress" element={<ProgressTrackerPage />} />
-            <Route path="/holi" element={<HoliSplash />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/progresstrack" element={<ProgressTracker />} />
-            <Route path="*" element={<NotFound />} />
-            <Route path="/editableeditor" element={<EditableEditor />} />
-            <Route path="/calculator" element={<Calculator />} />
-            <Route path="/todolist" element={<TodoList />} />
-            <Route path="/header" element={<Header />} />
-            <Route path="/ProductListing" element={<ProductListing />} />
-            <Route path="/cart" element={<CartPage />} />
-            <Route path="/newtab" element={<MaterialYouNewTab />} />
-            <Route path="/tictactoe" element={<TicTacToe />} />
-            <Route path="/weather" element={<WeatherWidget />} />
-            <Route path="/userform" element={<UserFormPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/shayari" element={<ShayariComponent />} />
-            <Route path='/imagetotext' element={<ImgToTextPage />} />
-            <Route path='/morse' element={<MorseCodeConverter />} />
-            <Route path='/landmeasurement' element={<LandMeasurementConverter />} />
-            <Route path="/clock" element={<ClockDisplay />} />
-            <Route path="/solar" element={<SolarSystemExplorer />} />
-            <Route path="/vocabmatch" element={<VocabMatchGame />} />
-            <Route path="/memoryMatch" element={<MemoryMatchGame />} />
-            <Route path="/timeCalculator" element={<TimeCalculator />} />
-            <Route path="/dictionary" element={<Dictionary />} />
-            <Route path="/geminibhAI" element={<ChatComponent />} />
-            <Route path="/fifteenpuzzle" element={<FifteenPuzzle />} />
-            <Route path="/metroticket" element={<MetroTicketGenerator />} />
-            <Route path="/projectdetails" element={<ProjectDetails />} />
-          </Routes>
+    <ThemeProvider>
+      <div className={styles.appWrapper}>
+        <div className={styles.mainLayout}>
+          <button
+            onClick={() => setShowSidebar(!showSidebar)}
+            className={styles.toggleButton}
+            aria-label="Toggle Sidebar"
+          >
+            {showSidebar ? "✖" : "☰"}
+          </button>
+          <Sidebar showSidebar={showSidebar} />
+          <div className={`${styles.content} ${showSidebar ? styles.withSidebar : ''}`}>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/hello" element={<HelloWorld />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/userlist" element={<UserList />} />
+              <Route path="/usertable" element={<UserTable />} />
+              <Route path="/counter" element={<Counter />} />
+              <Route path="/hooks" element={<Hooks />} />
+              <Route path="/curtains" element={<CurtainShow />} />
+              <Route path="/numtowords" element={<NumberToIndianWords />} />
+              <Route path="/audiotowords" element={<AudioToWords />} />
+              <Route path="/progress" element={<ProgressTrackerPage />} />
+              <Route path="/holi" element={<HoliSplash />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/progresstrack" element={<ProgressTracker />} />
+              <Route path="*" element={<NotFound />} />
+              <Route path="/editableeditor" element={<EditableEditor />} />
+              <Route path="/calculator" element={<Calculator />} />
+              <Route path="/todolist" element={<TodoList />} />
+              <Route path="/header" element={<Header />} />
+              <Route path="/ProductListing" element={<ProductListing />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/newtab" element={<MaterialYouNewTab />} />
+              <Route path="/tictactoe" element={<TicTacToe />} />
+              <Route path="/weather" element={<WeatherWidget />} />
+              <Route path="/userform" element={<UserFormPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/shayari" element={<ShayariComponent />} />
+              <Route path='/imagetotext' element={<ImgToTextPage />} />
+              <Route path='/morse' element={<MorseCodeConverter />} />
+              <Route path='/landmeasurement' element={<LandMeasurementConverter />} />
+              <Route path="/clock" element={<ClockDisplay />} />
+              <Route path="/solar" element={<SolarSystemExplorer />} />
+              <Route path="/vocabmatch" element={<VocabMatchGame />} />
+              <Route path="/memoryMatch" element={<MemoryMatchGame />} />
+              <Route path="/timeCalculator" element={<TimeCalculator />} />
+              <Route path="/dictionary" element={<Dictionary />} />
+              <Route path="/geminibhAI" element={<ChatComponent />} />
+              <Route path="/fifteenpuzzle" element={<FifteenPuzzle />} />
+              <Route path="/metroticket" element={<MetroTicketGenerator />} />
+              <Route path="/projectdetails" element={<ProjectDetails />} />
+              <Route path="/finance-tracker" element={<FinanceTrackerPage />} />
+              <Route path="/finance-tracker/history" element={<TransactionHistoryPage />} />
+              <Route path="/typing-tutor" element={<TypingTutor />} />
+              <Route path="/speed-test" element={<SpeedTest />} />
+              <Route path="/shloka" element={<ShlokaForm />} />
+            </Routes>
+          </div>
         </div>
+        <footer className={styles.footer}>
+          <span
+            onClick={() => navigate("/about")}
+            className="text-blue-400 hover:text-blue-300 transition-colors duration-200 font-bold cursor-pointer"
+          >
+            © {new Date().getFullYear()}
+          </span>
+          <span
+            onClick={() => navigate("/Portfolio")}
+            className="text-purple-400 hover:text-purple-300 transition-colors duration-200 font-bold cursor-pointer ml-2"
+          >
+            kartmmhjn312
+          </span>
+        </footer>
       </div>
-      <footer className={styles.footer}>
-        <span
-          onClick={() => navigate("/about")}
-          className="text-blue-400 hover:text-blue-300 transition-colors duration-200 font-bold cursor-pointer"
-        >
-          © {new Date().getFullYear()}
-        </span>
-        <span
-          onClick={() => navigate("/Portfolio")}
-          className="text-purple-400 hover:text-purple-300 transition-colors duration-200 font-bold cursor-pointer ml-2"
-        >
-          kartmmhjn312
-        </span>
-      </footer>
-    </div>
+    </ThemeProvider>
   );
 }
 
