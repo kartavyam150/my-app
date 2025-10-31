@@ -34,6 +34,8 @@ const components = [
 	{ name: "Dictionary", desc: "Get English and Hindi meanings for words.", path: "/dictionary" }, // NEW
 	{ name: "AI Assistant (Gemini)", desc: "Chat with Gemini AI using your own backend.", path: "/geminibhAI" }, // NEW
 	{ name: "Finance Tracker", desc: "Track income, expenses, and manage financial goals.", path: "/finance-tracker" }, // NEW
+	{ name: "Typing Tutor", desc: "Improve typing speed and accuracy with live tracking.", path: "/typing-tutor" }, // NEW
+	{ name: "Speed Test", desc: "Test your internet speed (ping, download, upload).", path: "/speedtest" }, // NEW
 ];
 
 const About = () => {
