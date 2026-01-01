@@ -6,8 +6,8 @@ import styles from './App.module.css';
 import HelloWorld from "./components/Helloworld";
 import Counter from "./components/counter";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import Home from "./Pages/Home";
 import { ThemeProvider } from './contexts/ThemeContext';
-import Home from "./pages/Home";
 import About from "./Pages/About";
 import UserList from './components/user/UserList';
 import UserTable from './components/user/userTable';
@@ -54,6 +54,7 @@ import TransactionHistoryPage from './components/financeTracker/TransactionHisto
 import TypingTutor from './components/TypingTutor';
 import SpeedTest from './components/SpeedTest';
 import ShlokaForm from './components/ShlokaForm';
+import NumberGuessingGame from './components/number-guessing-game/NumberGuessingGame';
 
 
 function App() {
@@ -120,6 +121,7 @@ function App() {
               <Route path="/typing-tutor" element={<TypingTutor />} />
               <Route path="/speed-test" element={<SpeedTest />} />
               <Route path="/shloka" element={<ShlokaForm />} />
+              <Route path="/number-guessing" element={<NumberGuessingGame />} />
             </Routes>
           </div>
         </div>
