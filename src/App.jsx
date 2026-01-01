@@ -54,6 +54,7 @@ import TransactionHistoryPage from './components/financeTracker/TransactionHisto
 import TypingTutor from './components/TypingTutor';
 import SpeedTest from './components/SpeedTest';
 import ShlokaForm from './components/ShlokaForm';
+import NumberGuessingGame from './components/number-guessing-game/NumberGuessingGame';
 
 
 function App() {
@@ -120,6 +121,7 @@ function App() {
               <Route path="/typing-tutor" element={<TypingTutor />} />
               <Route path="/speed-test" element={<SpeedTest />} />
               <Route path="/shloka" element={<ShlokaForm />} />
+              <Route path="/number-guessing" element={<NumberGuessingGame />} />
             </Routes>
           </div>
         </div>

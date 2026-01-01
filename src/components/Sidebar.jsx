@@ -70,7 +70,7 @@ const navItems = [
   { label: "clock", path: "/clock", icon: <FaClock /> },
   { label: "Solar System Explorer", path: "/solar", icon: <FaGlobe /> },
   { label: "Vocab Match Game", path: "/vocabmatch", icon: <FaPuzzlePiece /> },
-  { label: "Memory Match Game", path: "/memorymatch", icon: <FaBrain />},
+  { label: "Memory Match Game", path: "/memorymatch", icon: <FaBrain /> },
   { label: "Time Calculator", path: "/timecalculator", icon: <FaClock /> },
   { label: "Dictionary", path: "/dictionary", icon: <FaBookOpen /> },
   { label: "geminibhAI", path: "/geminibhAI", icon: <FaBrain /> },
@@ -81,6 +81,7 @@ const navItems = [
   { label: "Typing Tutor", path: "/typing-tutor", icon: <FaCode /> },
   { label: "Speed Test", path: "/speed-test", icon: <FaWifi /> },
   { label: "Shlokas", path: "/shloka", icon: <FaBookOpen /> },
+  { label: "Number Guessing", path: "/number-guessing", icon: <FaGamepad /> },
 ];
 
 const Sidebar = ({ showSidebar }) => {
@@ -92,44 +93,48 @@ const Sidebar = ({ showSidebar }) => {
   };
 
   return (
-    <aside className={`h-screen w-72 bg-gray-900 flex flex-col px-6 py-8 shadow-2xl border-r border-gray-800 fixed top-0 left-0 z-40 overflow-y-auto hide-scrollbar transform transition-transform duration-300 ease-in-out ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}>
-      {/* Logo */}
-      <div
-        className="flex items-center justify-center mb-10 cursor-pointer"
-        onClick={() => navigate("/")}
-      >
-        <img
-          src="https://github.com/kartavyam150.png"
-          alt="Logo"
-          className="w-16 h-16 rounded-full border-4 border-purple-500 shadow-lg transform transition-transform duration-300 hover:scale-110"
-        />
+    <aside className={`h-screen w-72 bg-gray-900 flex flex-col px-6 py-8 shadow-2xl border-r border-gray-800 fixed top-0 left-0 z-40 transform transition-transform duration-300 ease-in-out ${showSidebar ? 'translate-x-0' : '-translate-x-full'}`}>
+      {/* Fixed Header Section */}
+      <div className="flex-shrink-0">
+        {/* Logo */}
+        <div
+          className="flex items-center justify-center mb-10 cursor-pointer"
+          onClick={() => navigate("/")}
+        >
+          <img
+            src="https://github.com/kartavyam150.png"
+            alt="Logo"
+            className="w-16 h-16 rounded-full border-4 border-purple-500 shadow-lg transform transition-transform duration-300 hover:scale-110"
+          />
+        </div>
+        {/* Sidebar Title */}
+        <div className="mb-10 text-center">
+          <span className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 tracking-wider">
+            Quick Access
+          </span>
+        </div>
+        {/* Theme Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          className="w-full flex items-center justify-center gap-4 px-5 py-3 rounded-xl cursor-pointer text-gray-300 hover:bg-gray-800 hover:text-blue-400 transition-all duration-200 font-medium text-base group relative overflow-hidden mb-4"
+        >
+          <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-0 transition-opacity duration-200 group-hover:opacity-20"></span>
+          <span className="text-2xl text-blue-400 group-hover:text-purple-400 transition-colors duration-200 relative z-10">
+            {theme === 'light' ? <FaMoon /> : <FaSun />}
+          </span>
+          <span className="relative z-10">
+            {theme === 'light' ? 'Dark Theme' : 'Light Theme'}
+          </span>
+        </button>
       </div>
-      {/* Sidebar Title */}
-      <div className="mb-10 text-center">
-        <span className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 tracking-wider">
-          Quick Access
-        </span>
-      </div>
-      {/* Theme Toggle Button */}
-      <button
-        onClick={toggleTheme}
-        className="flex items-center justify-center gap-4 px-5 py-3 rounded-xl cursor-pointer text-gray-300 hover:bg-gray-800 hover:text-blue-400 transition-all duration-200 font-medium text-base group relative overflow-hidden mb-4"
-      >
-        <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-0 transition-opacity duration-200 group-hover:opacity-20"></span>
-        <span className="text-2xl text-blue-400 group-hover:text-purple-400 transition-colors duration-200 relative z-10">
-          {theme === 'light' ? <FaMoon /> : <FaSun />}
-        </span>
-        <span className="relative z-10">
-          {theme === 'light' ? 'Dark Theme' : 'Light Theme'}
-        </span>
-      </button>
-      {/* Navigation Items */}
-      <ul className="flex flex-col gap-2 flex-grow">
+
+      {/* Scrollable Navigation Items */}
+      <ul className="flex flex-col gap-2 flex-grow overflow-y-auto hide-scrollbar -mx-2 px-2">
         {navItems.map((item) => (
           <li
             key={item.path}
             onClick={() => navigate(item.path)}
-            className="flex items-center gap-4 px-5 py-3 rounded-xl cursor-pointer text-gray-300 hover:bg-gray-800 hover:text-blue-400 transition-all duration-200 font-medium text-base group relative overflow-hidden"
+            className="flex items-center gap-4 px-5 py-3 rounded-xl cursor-pointer text-gray-300 hover:bg-gray-800 hover:text-blue-400 transition-all duration-200 font-medium text-base group relative overflow-hidden flex-shrink-0"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-0 transition-opacity duration-200 group-hover:opacity-20"></span>
             <span className="text-2xl text-blue-400 group-hover:text-purple-400 transition-colors duration-200 relative z-10">
@@ -139,20 +144,23 @@ const Sidebar = ({ showSidebar }) => {
           </li>
         ))}
       </ul>
-      {/* User Profile */}
-      <Link
-        to="/portfolio"
-        className="mt-auto flex items-center gap-4 px-5 py-4 bg-gray-800 rounded-xl mb-4 hover:bg-gray-700 transition-all duration-200 cursor-pointer shadow-md"
-      >
-        <img
-          src="https://github.com/kartavyam150.png"
-          alt="User"
-          className="w-11 h-11 rounded-full border-3 border-blue-400 shadow-sm"
-        />
-        <span className="text-gray-100 font-semibold text-lg">Kartavya Mahajan</span>
-      </Link>
-      <div className="text-sm text-gray-500 text-center pb-4">
-        © {new Date().getFullYear()} Kartavya Mahajan
+
+      {/* User Profile (Fixed at Bottom) */}
+      <div className="flex-shrink-0 pt-4 bg-gray-900 z-10">
+        <Link
+          to="/portfolio"
+          className="flex items-center gap-4 px-5 py-4 bg-gray-800 rounded-xl mb-4 hover:bg-gray-700 transition-all duration-200 cursor-pointer shadow-md"
+        >
+          <img
+            src="https://github.com/kartavyam150.png"
+            alt="User"
+            className="w-11 h-11 rounded-full border-3 border-blue-400 shadow-sm"
+          />
+          <span className="text-gray-100 font-semibold text-lg">Kartavya Mahajan</span>
+        </Link>
+        <div className="text-sm text-gray-500 text-center pb-4">
+          © {new Date().getFullYear()} Kartavya Mahajan
+        </div>
       </div>
     </aside>
   );
