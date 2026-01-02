@@ -1,8 +1,6 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import './App.css';
-import styles from './App.module.css';
 import HelloWorld from "./components/Helloworld";
 import Counter from "./components/counter";
 import { Routes, Route, useNavigate } from "react-router-dom";
@@ -63,17 +61,28 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className={styles.appWrapper}>
-        <div className={styles.mainLayout}>
-          <button
-            onClick={() => setShowSidebar(!showSidebar)}
-            className={styles.toggleButton}
-            aria-label="Toggle Sidebar"
-          >
-            {showSidebar ? "✖" : "☰"}
-          </button>
-          <Sidebar showSidebar={showSidebar} />
-          <div className={`${styles.content} ${showSidebar ? styles.withSidebar : ''}`}>
+      <div className="flex h-screen w-full bg-slate-950 text-slate-100 overflow-hidden font-sans">
+
+        {/* Toggle Button for Mobile/Collapsed view */}
+        <button
+          onClick={() => setShowSidebar(!showSidebar)}
+          className={`absolute top-4 left-4 z-50 p-2 rounded-lg bg-slate-800/50 backdrop-blur-md border border-slate-700 hover:bg-slate-700 transition-colors ${showSidebar ? 'hidden' : 'block'}`}
+          aria-label="Toggle Sidebar"
+        >
+          ☰
+        </button>
+
+        <Sidebar showSidebar={showSidebar} />
+
+        {/* Main Content Area */}
+        <div
+          className={`
+            flex-1 flex flex-col h-full overflow-hidden transition-all duration-300 ease-in-out
+            ${showSidebar ? 'ml-72' : 'ml-0'}
+            bg-slate-50 text-slate-900
+          `}
+        >
+          <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 md:p-6 lg:p-8 scroll-smooth">
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route path="/hello" element={<HelloWorld />} />
@@ -124,21 +133,25 @@ function App() {
               <Route path="/number-guessing" element={<NumberGuessingGame />} />
             </Routes>
           </div>
+
+          {/* Footer */}
+          <footer className="py-4 border-t border-slate-800 bg-slate-950/80 backdrop-blur text-center text-sm text-slate-500">
+            <span>© {new Date().getFullYear()}</span>
+            <span
+              onClick={() => navigate("/about")}
+              className="mx-2 text-cyan-400 hover:text-cyan-300 cursor-pointer font-medium"
+            >
+              My App
+            </span>
+            |
+            <span
+              onClick={() => navigate("/Portfolio")}
+              className="ml-2 text-purple-400 hover:text-purple-300 cursor-pointer font-medium"
+            >
+              kartmmhjn312
+            </span>
+          </footer>
         </div>
-        <footer className={styles.footer}>
-          <span
-            onClick={() => navigate("/about")}
-            className="text-blue-400 hover:text-blue-300 transition-colors duration-200 font-bold cursor-pointer"
-          >
-            © {new Date().getFullYear()}
-          </span>
-          <span
-            onClick={() => navigate("/Portfolio")}
-            className="text-purple-400 hover:text-purple-300 transition-colors duration-200 font-bold cursor-pointer ml-2"
-          >
-            kartmmhjn312
-          </span>
-        </footer>
       </div>
     </ThemeProvider>
   );
